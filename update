@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We Know EGYPT — Book a Service</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF8F1;
+  --card:#FFFFFF;
+  --ink:#22303C;
+  --muted:#6B7683;
+  --lapis:#1F3E7C;      /* matched to logo blue */
+  --lapis-deep:#14295A;
+  --nile:#2E7D74;
+  --gold:#E8940F;       /* matched to logo pin */
+  --gold-soft:#FCEFD8;
+  --line:#E8E0D0;
+  --danger:#B4372F;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+body{
+  font-family:'Public Sans',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  min-height:100vh;
+  font-size:16px;
+  line-height:1.55;
+}
+/* ---------- header ---------- */
+header{
+  background:linear-gradient(160deg,var(--lapis-deep) 0%,var(--lapis) 100%);
+  color:#fff;
+  padding:30px 20px 42px;
+  position:relative;
+}
+header::after{
+  content:"";
+  position:absolute;left:0;right:0;bottom:0;height:10px;
+  background:
+    linear-gradient(135deg, transparent 50%, var(--paper) 50%) 0 0/14px 10px repeat-x,
+    linear-gradient(45deg, var(--paper) 50%, transparent 50%) 0 0/14px 10px repeat-x;
+}
+.brand{max-width:680px;margin:0 auto;display:flex;align-items:center;gap:18px;justify-content:center;text-align:left}
+.brand .logo{
+  width:86px;height:86px;flex:none;border-radius:20px;background:#fff;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+.brand .logo img{width:78%;height:78%;object-fit:contain}
+.brand .eyebrow{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px}
+.brand h1{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(26px,5.5vw,38px);letter-spacing:.02em;line-height:1.1}
+.brand p{margin-top:6px;color:#C8D6E6;font-size:14px}
+@media(max-width:480px){
+  .brand{flex-direction:column;text-align:center;gap:12px}
+}
+/* ---------- shell ---------- */
+main{max-width:680px;margin:26px auto 60px;padding:0 16px;position:relative;z-index:1}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 8px 28px rgba(20,41,90,.07);
+  padding:26px 24px;
+  margin-bottom:18px;
+}
+@media(max-width:480px){ .card{padding:20px 16px} }
+.sec-eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px}
+h2.step-title{font-family:'Marcellus',serif;font-weight:400;font-size:23px;margin-bottom:4px}
+.step-sub{color:var(--muted);font-size:14px;margin-bottom:20px}
+/* ---------- welcome / ticket ---------- */
+.welcome{display:flex;align-items:center;gap:12px;background:var(--gold-soft);
+  border:1px solid #F0D6A4;border-radius:var(--radius);padding:14px 16px;margin-bottom:18px}
+.welcome .wave{font-size:24px}
+.welcome b{color:var(--lapis-deep)}
+.welcome p{font-size:14px;color:#6b5324}
+.ticket{
+  position:relative;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);margin-bottom:18px;overflow:hidden;
+  box-shadow:0 8px 28px rgba(20,41,90,.07);
+}
+.ticket-top{
+  background:var(--lapis-deep);color:#fff;padding:14px 18px;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.ticket-top .tt{font-family:'Marcellus',serif;font-size:17px;letter-spacing:.03em}
+.ticket-top .badge{font-size:11px;background:var(--gold);color:#3d2b06;font-weight:700;
+  padding:3px 10px;border-radius:99px;letter-spacing:.05em;white-space:nowrap}
+.ticket-body{padding:16px 18px;border-bottom:1.5px dashed var(--line)}
+.ticket-body .svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.svc-tag{font-size:12.5px;font-weight:600;background:#EEF3F8;color:var(--lapis);
+  border:1px solid #D6E2EE;padding:3px 10px;border-radius:99px}
+.ticket-body .meta{font-size:13.5px;color:var(--muted)}
+.ticket-actions{display:flex;gap:10px;padding:14px 18px}
+.ticket::before,.ticket::after{
+  content:"";position:absolute;width:18px;height:18px;border-radius:50%;
+  background:var(--paper);border:1px solid var(--line);bottom:56px;
+}
+.ticket::before{left:-10px}
+.ticket::after{right:-10px}
+/* ---------- fields ---------- */
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.req{color:var(--danger)}
+.hint{font-size:12.5px;color:var(--muted);margin-top:5px}
+input[type=text],input[type=tel],input[type=email],input[type=date],input[type=time],
+input[type=number],select,textarea{
+  width:100%;padding:11px 13px;font:inherit;font-size:15px;color:var(--ink);
+  background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;
+  transition:border-color .15s, box-shadow .15s;
+}
+textarea{min-height:78px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--lapis);box-shadow:0 0 0 3px rgba(31,62,124,.12)}
+.field.error input,.field.error select,.field.error textarea{border-color:var(--danger)}
+.err-msg{display:none;font-size:12.5px;color:var(--danger);margin-top:5px;font-weight:600}
+.field.error .err-msg{display:block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+@media(max-width:480px){ .grid2{grid-template-columns:1fr} }
+/* radio pills */
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{position:relative}
+.pill input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.pill span{
+  display:inline-block;padding:8px 15px;border:1.5px solid var(--line);border-radius:99px;
+  font-size:14px;font-weight:500;color:var(--ink);background:#fff;cursor:pointer;
+  transition:all .15s;
+}
+.pill input:checked + span{background:var(--lapis);border-color:var(--lapis);color:#fff}
+.pill input:focus-visible + span{box-shadow:0 0 0 3px rgba(31,62,124,.25)}
+/* ---------- service cards ---------- */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:420px){ .svc-grid{grid-template-columns:1fr} }
+.svc-card{position:relative}
+.svc-card input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.svc-card .box{
+  border:1.5px solid var(--line);border-radius:12px;background:#fff;
+  padding:13px;display:flex;gap:12px;align-items:center;cursor:pointer;height:100%;
+  transition:all .15s;
+}
+.svc-card .ic{
+  width:40px;height:40px;flex:none;border-radius:10px;background:#EEF3F8;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  transition:all .15s;
+}
+.svc-card .nm{font-weight:600;font-size:14.5px;line-height:1.3}
+.svc-card .ds{font-size:12px;color:var(--muted);margin-top:2px}
+.svc-card .tick{
+  margin-left:auto;width:22px;height:22px;flex:none;border-radius:50%;
+  border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:#fff;transition:all .15s;
+}
+.svc-card input:checked + .box{border-color:var(--gold);background:#FFFDF6;box-shadow:0 0 0 1px var(--gold)}
+.svc-card input:checked + .box .ic{background:var(--gold-soft)}
+.svc-card input:checked + .box .tick{background:var(--gold);border-color:var(--gold)}
+.svc-card input:checked + .box .tick::after{content:"✓"}
+.svc-card input:focus-visible + .box{box-shadow:0 0 0 3px rgba(232,148,15,.35)}
+.multi-hint{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-bottom:14px}
+.multi-hint .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+/* expanding sections */
+.svc-section{
+  border:1px solid var(--line);border-radius:12px;margin-top:14px;overflow:hidden;
+  animation:slideIn .3s ease;
+}
+@keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.svc-section > .head{
+  background:linear-gradient(90deg,#F2F5FA,#FBF8F1);
+  padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);
+}
+.svc-section > .head .ic{font-size:18px}
+.svc-section > .head h3{font-family:'Marcellus',serif;font-weight:400;font-size:18px}
+.svc-section > .head .note{margin-left:auto;font-size:11.5px;color:var(--muted)}
+.svc-section > .body{padding:16px}
+/* ---------- buttons ---------- */
+.btn{
+  font:inherit;font-weight:700;font-size:15px;border-radius:11px;cursor:pointer;
+  padding:12px 22px;border:1.5px solid transparent;transition:all .15s;
+}
+.btn-primary{background:var(--lapis);color:#fff}
+.btn-primary:hover{background:var(--lapis-deep)}
+.btn-gold{background:var(--gold);color:#3d2b06}
+.btn-gold:hover{filter:brightness(.95)}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--lapis);color:var(--lapis)}
+.btn-wa{background:#1EBE5D;color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:16px;padding:14px 22px}
+.btn-wa:hover{background:#17A44F}
+.btn:focus-visible{outline:3px solid rgba(31,62,124,.3);outline-offset:1px}
+/* ---------- send card ---------- */
+.remember{display:flex;align-items:flex-start;gap:10px;background:#F2F5FA;border:1px solid var(--line);
+  border-radius:10px;padding:12px 14px;margin:0 0 16px;font-size:14px}
+.remember input{margin-top:3px;accent-color:var(--lapis);width:16px;height:16px}
+.send-err{display:none;font-size:13.5px;color:var(--danger);font-weight:600;margin-top:10px;text-align:center}
+.send-err a{color:inherit}
+/* ---------- success ---------- */
+.success{text-align:center;padding:34px 20px}
+.success .mark{
+  width:64px;height:64px;border-radius:50%;background:var(--nile);color:#fff;
+  font-size:30px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;
+}
+.success h2{font-family:'Marcellus',serif;font-weight:400;font-size:26px;margin-bottom:8px}
+.success p{color:var(--muted);font-size:15px;max-width:400px;margin:0 auto 20px}
+.toast{
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(80px);
+  background:var(--ink);color:#fff;font-size:14px;font-weight:600;
+  padding:11px 20px;border-radius:99px;opacity:0;transition:all .3s;z-index:50;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:90vw;text-align:center;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:0 16px 34px}
+.hidden{display:none!important}
+
+/* ---------- v11: edit-your-booking + order number ---------- */
+.btn-sm{padding:8px 14px;font-size:14px}
+.editbar{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;
+  margin-bottom:18px;font-size:14px;color:var(--muted)}
+#editArea{display:none}
+body.edit-mode #editArea{display:block}
+body.edit-mode #bookingArea, body.edit-mode #ticket, body.edit-mode #welcome,
+body.edit-mode #stepDone, body.edit-mode #editBar{display:none!important}
+.ordernum{background:var(--gold-soft);border:1px solid #F0D6A4;border-radius:var(--radius);padding:16px;margin:0 auto 20px;max-width:420px}
+.ordernum .on-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a5a06;font-weight:700}
+.ordernum .on-num{font-family:'Marcellus',serif;font-size:34px;color:var(--lapis-deep);line-height:1.2;margin:2px 0 6px}
+.ordernum p{font-size:13.5px;color:#6b5324;margin:0 auto 12px}
+.ed-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px}
+.ed-svc{border:1px solid var(--line);border-radius:12px;margin-top:14px;overflow:hidden;background:#fff}
+.ed-svc > .head{background:linear-gradient(90deg,#F2F5FA,#FBF8F1);padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
+.ed-svc > .head h3{font-family:'Marcellus',serif;font-weight:400;font-size:18px}
+.ed-svc > .head .ic{font-size:18px}
+.ed-status{margin-left:auto;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:99px;white-space:nowrap;background:#EEF3F8;color:var(--lapis)}
+.ed-status.st-Approved{background:#DDF0E6;color:#1f6b45}
+.ed-status.st-Pending{background:var(--gold-soft);color:#8a5a06}
+.ed-status.st-Refused{background:#F7DEDB;color:var(--danger)}
+.ed-body{padding:16px}
+.ed-row{display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.ed-row:last-child{border-bottom:none}
+.ed-row .k{color:var(--muted)}
+.ed-row .v{font-weight:600;text-align:right;overflow-wrap:anywhere}
+.ed-sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:14px 0 10px}
+.ed-lock{background:#F2F5FA;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px;color:var(--muted);margin-top:12px}
+.ed-lock a{color:var(--lapis);font-weight:600}
+.ed-msg{display:none;font-size:13.5px;font-weight:600;margin-top:10px}
+.ed-msg.ok{display:block;color:var(--nile)}
+.ed-msg.bad{display:block;color:var(--danger)}
+.ed-msg a{color:inherit}
+.ed-cancel{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);text-align:center}
+.btn-danger{background:#fff;border-color:#E3B9B5;color:var(--danger)}
+.btn-danger:hover{background:#FBEFEE}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo"><img src="logo.png" alt="We Know EGYPT logo"></div>
+    <div>
+      <div class="eyebrow">Travel • Tours • Concierge</div>
+      <h1>We Know EGYPT</h1>
+      <p>Book your transfers, tours and travel services in a couple of minutes.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- v11: entry point for customers who already sent a booking -->
+  <div id="editBar" class="editbar">
+    <span>Already sent a booking?</span>
+    <button class="btn btn-ghost btn-sm" type="button" onclick="openEdit()">Change or cancel my booking</button>
+  </div>
+
+  <!-- welcome back banner -->
+  <div id="welcome" class="welcome hidden">
+    <div class="wave">👋</div>
+    <p>Welcome back, <b id="welcomeName"></b> — your details are already filled in for you.</p>
+  </div>
+
+  <!-- repeat last booking ticket -->
+  <div id="ticket" class="ticket hidden">
+    <div class="ticket-top">
+      <div class="tt">Your last booking</div>
+      <div class="badge">ONE-TAP REPEAT</div>
+    </div>
+    <div class="ticket-body">
+      <div class="svc-tags" id="ticketTags"></div>
+      <div class="meta" id="ticketMeta"></div>
+    </div>
+    <div class="ticket-actions">
+      <button class="btn btn-gold" id="btnRepeat" style="flex:1">Repeat this booking</button>
+      <button class="btn btn-ghost" id="btnFresh">Start fresh</button>
+    </div>
+  </div>
+
+  <div id="bookingArea">
+
+    <!-- 1 : details -->
+    <section class="card" id="detailsCard">
+      <div class="sec-eyebrow">Step 1</div>
+      <h2 class="step-title">Your details</h2>
+      <p class="step-sub">We use these to confirm your booking on WhatsApp.</p>
+
+      <div class="field" data-field="fullName">
+        <label for="fullName">Full name <span class="req">*</span></label>
+        <input type="text" id="fullName" autocomplete="name" placeholder="e.g. Maria Rossi">
+        <div class="err-msg">Please enter your full name.</div>
+      </div>
+
+      <div class="field" data-field="nationality">
+        <label for="nationality">Nationality</label>
+        <input type="text" id="nationality" autocomplete="country-name" placeholder="e.g. Italian">
+        <div class="hint">Needed if you book a Meet &amp; Greet, Meet &amp; Assist, or a Day Tour.</div>
+      </div>
+
+      <div class="grid2">
+        <div class="field" data-field="whatsapp">
+          <label for="whatsapp">WhatsApp number <span class="req">*</span></label>
+          <input type="tel" id="whatsapp" inputmode="tel" placeholder="+20 1XX XXX XXXX">
+          <div class="hint">Start with your country code (e.g. +20…).</div>
+          <div class="err-msg">Enter a WhatsApp number starting with your country code (e.g. +20…).</div>
+        </div>
+        <div class="field" data-field="email">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" autocomplete="email" placeholder="you@example.com">
+          <div class="err-msg">Please enter a valid email address.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 : services (tap to expand instantly) -->
+    <section class="card" id="servicesCard">
+      <div class="sec-eyebrow">Step 2</div>
+      <h2 class="step-title">How can we help?</h2>
+      <p class="step-sub">Tap a service and its questions open right below. </p>
+      <div class="multi-hint"><span class="dot"></span>You can pick more than one service and book them all in one request.</div>
+      <div class="svc-grid" id="svcGrid"></div>
+      <div class="err-msg" id="svcError" style="margin-top:10px">Please choose at least one service.</div>
+      <div id="svcForms"></div>
+    </section>
+
+    <!-- 3 : send -->
+    <section class="card" id="sendCard">
+      <div class="sec-eyebrow">Step 3</div>
+      <h2 class="step-title">Send your request</h2>
+      <p class="step-sub">Your request goes straight to our team — we'll review it and confirm with you on WhatsApp.</p>
+      <label class="remember">
+        <input type="checkbox" id="rememberMe" checked>
+        <span>Remember my details and this booking on this device, so next time I can re-order with one tap.</span>
+      </label>
+      <button class="btn btn-primary" id="btnSend" onclick="sendBooking()" style="width:100%;font-size:16px;padding:14px 22px">
+        Send booking request →
+      </button>
+      <div class="send-err" id="sendErr">Please complete the highlighted fields above first.</div>
+    </section>
+
+  </div>
+
+  <!-- SUCCESS -->
+  <section class="card hidden" id="stepDone">
+    <div class="success">
+      <div class="mark">✓</div>
+      <h2>Thank you for choosing We Know Egypt</h2>
+      <p>Our team is currently reviewing your request. You will receive a WhatsApp message shortly containing your full booking details and final price.</p>
+      <div id="orderNumBox" class="ordernum hidden"></div>
+      <p>For immediate support or further details, please contact us via:</p>
+      <a class="btn btn-gold" href="https://wa.me/201204277792" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;margin-bottom:12px">💬 Chat with us on WhatsApp</a>
+      <br>
+      <button class="btn btn-ghost" onclick="location.reload()">Make another booking</button>
+    </div>
+  </section>
+
+
+  <!-- EDIT YOUR BOOKING -->
+  <section class="card" id="editArea">
+    <button class="btn btn-ghost btn-sm" type="button" onclick="closeEdit()" style="margin-bottom:16px">← Back to booking</button>
+
+    <div id="edLookup">
+      <div class="sec-eyebrow">Your booking</div>
+      <h2 class="step-title">Change or cancel a booking</h2>
+      <p class="step-sub">Enter the details you used when you booked. Your order number was shown on the confirmation screen after you sent your request.</p>
+      <form onsubmit="editFind(); return false;">
+        <div class="field">
+          <label for="edName">Full name <span class="req">*</span></label>
+          <input type="text" id="edName" autocomplete="name" placeholder="Exactly as in your booking">
+        </div>
+        <div class="field">
+          <label for="edPhone">WhatsApp number <span class="req">*</span></label>
+          <input type="tel" id="edPhone" inputmode="tel" autocomplete="tel" placeholder="+20 1XX XXX XXXX">
+        </div>
+        <div class="field">
+          <label for="edNum">Order number <span class="req">*</span></label>
+          <input type="text" id="edNum" inputmode="numeric" placeholder="e.g. 1042">
+        </div>
+        <button class="btn btn-primary" id="edBtn" type="submit" style="width:100%;font-size:16px;padding:14px 22px">Find my booking</button>
+        <div class="send-err" id="edErr"></div>
+      </form>
+      <p class="hint" style="margin-top:14px">Booked before order numbers were introduced, or can't find your number? <a href="https://wa.me/201204277792" target="_blank" rel="noopener">Message us on WhatsApp</a> and we'll help.</p>
+    </div>
+
+    <div id="edResult" class="hidden"></div>
+  </section>
+
+</main>
+
+<footer>We Know EGYPT — Cairo, Egypt · Your details stay on your device and are only shared with our team when you send a booking. <span style="opacity:.55">· v11</span></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   CONFIGURATION
+   ------------------------------------------------------------
+   PRIMARY: the Google Form backend — unchanged from before. This
+   is what the team's WhatsApp automation and daily work still run
+   on, and it is what decides success or failure for the customer.
+
+   SIDE COPY: the same booking is also mirrored into the new
+   Supabase system (submit_order), best-effort, so the team can
+   see it at /orders without anyone doing anything extra. If this
+   part fails, the customer is never told — the Sheet submission
+   above is what matters right now.
+
+   SUPABASE_ANON_KEY is a public, publishable key — it is meant to
+   sit in client-side code like this. It cannot read or write
+   anything beyond what the database's own row-level security
+   rules allow (this page can only create new orders, never read
+   or edit existing ones).
+   ============================================================ */
+const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLScIt8s-f9keQZPcbhHDSt4SuBphKvTQpyhxurnakicbhELVQw/formResponse";
+const BUSINESS_WHATSAPP = "201204277792";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwZh0uYOR0lzSqi-Q_hETjBfkBWQqBN0MAJZf_U6A2Cf_bJo--0S2iyrG2jQaDO4kUO1Q/exec";
+
+const SUPABASE_URL = "https://beqehpvemfcebikscqdh.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_Q9N92kPhcY2WNErGXWInwA_MMDoG5VA";
+
+const AIRPORT_NAME = "Cairo International Airport";
+
+const ENTRY = {
+  fullName:    "entry.1419068384",
+  nationality: "entry.518338841",
+  whatsapp:    "entry.1161852729",
+  email:       "entry.2041135619",
+  howHelp:     "entry.1091216604",   // "How Can We Help ?"
+
+  transport: { pickup:"entry.1327771097", dropoff:"entry.1538702610", date:"entry.2042799961", time:"entry.78732811",
+               pax:"entry.1028984903", luggage:"entry.1700909671", flight:"entry.2016377069", vehicle:"entry.1531047549",
+               pay:"entry.1074092887", comment:"entry.116284715" },
+
+  daytour:   { date:"entry.1341942803", time:"entry.1294458387", pickup:"entry.464051379", dest:"entry.1091104833",
+               adults:"entry.1167651184", children:"entry.696851678", guide:"entry.618821739", guideLang:"entry.901012102",
+               pay:"entry.398157121", comment:"entry.1333344323" },
+
+  // Section 4 — Meet & Greet / Meet & Assist (same form questions for both;
+  // the page fills the "Type" question automatically for each one)
+  meetType:  "entry.159028204",   // the "Type" question (Meet & Greet / Meet & Assist)
+  meetGreet: { date:"entry.1594333221", time:"entry.1311507421", flight:"entry.832445649",
+               pax:"entry.1992245578", luggage:"entry.652791633", pay:"entry.1507336739", comment:"entry.5231189" },
+  meetAssist:{ date:"entry.1594333221", time:"entry.1311507421", flight:"entry.832445649",
+               pax:"entry.1992245578", luggage:"entry.652791633", pay:"entry.1507336739", comment:"entry.5231189" },
+
+  package:   { dest:"entry.1797263098", flightStatus:"entry.1499733040", dates:"entry.858726929", accom:"entry.1746021262",
+               level:"entry.1692191117", travelers:"entry.1509010505", requests:"entry.1281798842",
+               pay:"entry.908412708", comment:"entry.1528409486" },
+
+  flight:    { tripType:"entry.591352736", from:"entry.10657231", to:"entry.594229469", depart:"entry.1712141957",
+               return:"entry.1914573210", cabin:"entry.210022593", pax:"entry.829048777", airline:"entry.1195094458",
+               pay:"entry.1191795687", comment:"entry.173655211" },
+
+  hotel:     { city:"entry.1006370306", checkin:"entry.599263170", checkout:"entry.728004607", rooms:"entry.809424969",
+               category:"entry.1184652468", guests:"entry.262537248", meal:"entry.966133489",
+               pay:"entry.1199786059", comment:"entry.1099561847" },
+
+  car:       { duration:"entry.1452389035", start:"entry.1674238540", vehicle:"entry.2051824535",
+               pay:"entry.2106158215", comment:"entry.174825622" }
+};
+
+// the "Would you like to book another service?" + "Which additional service?"
+// questions of each section — the page answers them like a real user would
+const NAV = {
+  transport: { another:"entry.759147281",  which:"entry.1306174343" },
+  daytour:   { another:"entry.1510574454", which:"entry.1546042645" },
+  meetGreet: { another:"entry.928543909",  which:"entry.898058032" },
+  meetAssist:{ another:"entry.928543909",  which:"entry.898058032" },
+  package:   { another:"entry.1645179153", which:"entry.1244715476" },
+  flight:    { another:"entry.2014873303", which:"entry.990578649" },
+  hotel:     { another:"entry.147478553",  which:"entry.1590454883" },
+  car:       { another:"entry.47805767",   which:"entry.2074703433" }
+};
+
+// date questions → sent as entry.N_year / _month / _day
+const DATE_FIELDS = { transport:["date"], daytour:["date"], meetGreet:["date"], meetAssist:["date"],
+                      flight:["depart","return"], hotel:["checkin","checkout"], car:["start"] };
+// real "Time" questions → sent as entry.N_hour / _minute
+const TIME_FIELDS = { transport:["time"], meetGreet:["time"], meetAssist:["time"] };
+// the exact "Type" option each meet service sends to the form
+const MEET_TYPE_VALUE = { meetGreet:"Meet & Greet", meetAssist:"Meet & Assist" };
+// the Day Tour start time is a dropdown of 10-minute steps ("07:30"...)
+const CHOICE_TIME_FIELDS = { daytour:["time"] };
+
+// our display labels → the EXACT option text in the Google Form
+const VALUE_MAP = {
+  "Cash":"cash", "Visa":"visa",
+  "One way":"One Way", "Round trip":"Round Trip",
+  "Half board":"Half Board",
+  "Standard Sedan (up to 3 pax & 2 suitcases)":"Standard Sedan (up to 3 pax & 2 suitcases)",
+  "Van (up to 9 pax & 9 suitcases)":"Van (up to 9 pax & 9 suitcases)",
+  "Mini Bus (up to 18 pax & 18 suitcases)":"Mini Bus (up to 18 pax & 18 suitcases)",
+  "Already booked":"Yes, already booked (Please specify dates below)",
+  "Not booked yet":"Not yet (I will book my own flights later)",
+  "I need a full package (hotels + tours + transfers)":"No, I need a Full Package (Hotels + Tours + Transfers)",
+  "I have hotels (tours & transfers only)":"Yes, I have hotels (I only need Tours & Transfers)"
+};
+
+// service id → exact option text of "How Can We Help ?"
+const HOWHELP_MAP = {
+  transport:"transportation",
+  daytour:"Day tour",
+  meetGreet:"meet & great / meet & assist",
+  meetAssist:"meet & great / meet & assist",
+  package:"Tour package (Multi-day tours )",
+  flight:"Flight Booking",
+  hotel:"Hotel Booking",
+  car:"Long-term car hire (minimum 12-month contract)"
+};
+
+// the form "section" each service occupies — shared by both destinations
+// below, since it is really just "which service table this card touches"
+const SECTIONS_OF = { transport:[1], daytour:[2], transMeetGreet:[1,3], transMeetAssist:[1,3], meetGreet:[3], meetAssist:[3], package:[4], flight:[5], hotel:[6], car:[7] };
+const SEC_NAV = { 1:NAV.transport, 2:NAV.daytour, 3:NAV.meetGreet, 4:NAV.package, 5:NAV.flight, 6:NAV.hotel, 7:NAV.car };
+const SEC_HOWHELP = { 1:"transportation", 2:"Day tour", 3:"meet & great / meet & assist", 4:"Tour package (Multi-day tours )", 5:"Flight Booking", 6:"Hotel Booking", 7:"Long-term car hire (minimum 12-month contract)" };
+
+/* Every card's field keys, mapped to the database column each one
+   fills. [fromKey, dbColumn, isNumeric?] — shared by every service
+   that shares a shape (both Meet & Greet and Meet & Assist reuse
+   "meet", for example). Kept as plain data so it is easy to check
+   against the SERVICES field lists below. */
+const FIELD_MAP = {
+  transport: [
+    ["pickup","pickup"], ["dropoff","dropoff"], ["date","service_date"], ["time","service_time"],
+    ["pax","adults",true], ["luggage","luggage",true], ["flight","flight_number"], ["vehicle","vehicle"],
+    ["pay","payment_method"], ["comment","comment"],
+  ],
+  daytour: [
+    ["date","service_date"], ["time","service_time"], ["pickup","pickup"], ["dest","destination"],
+    ["adults","adults",true], ["children","children",true], ["guideLang","guide_language"],
+    ["pay","payment_method"], ["comment","comment"],
+  ],
+  meet: [
+    ["date","service_date"], ["time","service_time"], ["flight","flight_number"],
+    ["pax","pax",true], ["luggage","luggage",true], ["pay","payment_method"], ["comment","comment"],
+  ],
+  package: [
+    ["dest","destinations"], ["flightStatus","flight_status"], ["dates","travel_dates"],
+    ["accom","accommodation_status"], ["level","level"], ["travelers","travelers"],
+    ["requests","special_requests"], ["pay","payment_method"], ["comment","comment"],
+  ],
+  flight: [
+    ["tripType","trip_type"], ["from","from_location"], ["to","to_location"],
+    ["depart","service_date"], ["return","return_date"], ["cabin","cabin_class"],
+    ["pax","pax"], ["airline","airline"], ["pay","payment_method"], ["comment","comment"],
+  ],
+  hotel: [
+    ["city","city"], ["checkin","service_date"], ["checkout","check_out"], ["rooms","rooms",true],
+    ["category","category"], ["guests","guests"], ["meal","meal_plan"],
+    ["pay","payment_method"], ["comment","comment"],
+  ],
+  car: [
+    ["duration","duration"], ["start","service_date"], ["vehicle","vehicle"],
+    ["pay","payment_method"], ["comment","comment"],
+  ],
+};
+
+const PAY_ALL = ["Cash","Visa","Instapay","Bank Transfer","Other"];
+const PAY_NOCASH = ["Visa","Instapay","Bank Transfer","Other"];
+
+const SERVICES = [
+  { id:"transport", icon:"🚗", name:"Transportation", desc:"Airport & city transfers", fields:[
+    {k:"tripType", t:"pills", l:"Trip type", req:1, opts:["One way","Round trip"], def:"One way", hint:"Choose Round trip if you also need the ride back. We will quote one price for both ways."},
+    {k:"pickup", t:"text", l:"Pickup location", req:1},
+    {k:"dropoff", t:"text", l:"Drop-off location", req:1},
+    {k:"date", t:"date", l:"Date", req:1, half:1},
+    {k:"time", t:"time", l:"Time", req:1, half:1},
+    {k:"pax", t:"number", l:"Number of passengers", req:1, half:1, min:1, max:60},
+    {k:"luggage", t:"number", l:"Number of luggage", half:1, min:0, max:99},
+    {k:"flight", t:"text", l:"Flight number", hint:"Required for airport trips only."},
+    {k:"returnDate", t:"date", l:"Return date", req:1, half:1, showIf:{k:"tripType", v:"Round trip"}},
+    {k:"returnTime", t:"time", l:"Return time", req:1, half:1, showIf:{k:"tripType", v:"Round trip"}},
+    {k:"returnFlight", t:"text", l:"Return flight number", hint:"Only if you are flying back. The ride back uses the same places, reversed. If you return somewhere else, tell us in the comment.", showIf:{k:"tripType", v:"Round trip"}},
+    {k:"vehicle", t:"select", l:"Preferred vehicle", opts:["Standard Sedan (up to 3 pax & 2 suitcases)","Van (up to 9 pax & 9 suitcases)","Mini Bus (up to 18 pax & 18 suitcases)","Other"]},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_ALL},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]},
+  { id:"daytour", icon:"🐪", name:"Day Tour", desc:"Pyramids, museums & more", fields:[
+    {k:"date", t:"date", l:"Tour date", req:1, half:1},
+    {k:"time", t:"time", l:"Start time", req:1, half:1, hint:"We recommend starting between 7:30 and 9:30 AM."},
+    {k:"pickup", t:"text", l:"Pickup location", req:1},
+    {k:"dest", t:"text", l:"Tour destination / interests", req:1, ph:"e.g. Giza Pyramids + Egyptian Museum"},
+    {k:"adults", t:"number", l:"Adults", half:1, min:0, max:99},
+    {k:"children", t:"number", l:"Children (6–11.99 yrs)", half:1, min:0, max:99},
+    {k:"guide", t:"pills", l:"Tour guide required?", opts:["Yes","No"]},
+    {k:"guideLang", t:"select", l:"Tour guide language", opts:["English","Spanish","French","German","Italian"], showIf:{k:"guide", v:"Yes"}},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_ALL},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]},
+  { id:"transMeetGreet", icon:"🧳", name:"Transportation + Meet & Greet", desc:"Arrival airport meet + private transfer", note:"Cairo Airport only", fields:[
+    {k:"dropoff", t:"text", l:"Drop-off location", req:1},
+    {k:"date", t:"date", l:"Arrival date", req:1, half:1},
+    {k:"time", t:"time", l:"Arrival time", req:1, half:1},
+    {k:"flight", t:"text", l:"Flight number", req:1},
+    {k:"pax", t:"number", l:"Number of passengers", req:1, half:1, min:1, max:60},
+    {k:"luggage", t:"number", l:"Number of luggage", req:1, half:1, min:0, max:99},
+    {k:"vehicle", t:"select", l:"Preferred vehicle", opts:["Standard Sedan (up to 3 pax & 2 suitcases)","Van (up to 9 pax & 9 suitcases)","Mini Bus (up to 18 pax & 18 suitcases)","Other"]},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_ALL},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]},
+  { id:"transMeetAssist", icon:"🧳", name:"Transportation + Meet & Assist", desc:"Private transfer + departure airport meet", note:"Cairo Airport only", fields:[
+    {k:"pickup", t:"text", l:"Pickup location", req:1},
+    {k:"date", t:"date", l:"Departure date", req:1, half:1},
+    {k:"time", t:"time", l:"Departure time", req:1, half:1},
+    {k:"flight", t:"text", l:"Flight number", req:1},
+    {k:"pax", t:"number", l:"Number of passengers", req:1, half:1, min:1, max:60},
+    {k:"luggage", t:"number", l:"Number of luggage", req:1, half:1, min:0, max:99},
+    {k:"vehicle", t:"select", l:"Preferred vehicle", opts:["Standard Sedan (up to 3 pax & 2 suitcases)","Van (up to 9 pax & 9 suitcases)","Mini Bus (up to 18 pax & 18 suitcases)","Other"]},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_ALL},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]},
+  { id:"meetGreet", icon:"🛬", name:"Meet & Greet — Arrival", desc:"We welcome you at Cairo Airport", note:"Cairo Airport only", fields:[
+    {k:"date", t:"date", l:"Arrival date", req:1, half:1},
+    {k:"time", t:"time", l:"Arrival time", req:1, half:1},
+    {k:"flight", t:"text", l:"Flight number", req:1},
+    {k:"pax", t:"number", l:"Number of travelers", req:1, half:1, min:1, max:60},
+    {k:"luggage", t:"number", l:"Number of luggage", req:1, half:1, min:0, max:99},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_ALL},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]},
+  { id:"meetAssist", icon:"🛫", name:"Meet & Assist — Departure", desc:"Farewell service at Cairo Airport", note:"Cairo Airport only", fields:[
+    {k:"date", t:"date", l:"Departure date", req:1, half:1},
+    {k:"time", t:"time", l:"Departure time", req:1, half:1},
+    {k:"flight", t:"text", l:"Flight number", req:1},
+    {k:"pax", t:"number", l:"Number of travelers", req:1, half:1, min:1, max:60},
+    {k:"luggage", t:"number", l:"Number of luggage", req:1, half:1, min:0, max:99},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_ALL},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]},
+  { id:"package", icon:"🗺️", name:"Tour Package", desc:"Multi-day tours", fields:[
+    {k:"dest", t:"text", l:"Preferred destination(s)", ph:"e.g. Cairo, Luxor & Aswan"},
+    {k:"flightStatus", t:"pills", l:"International flight status", opts:["Already booked","Not booked yet"]},
+    {k:"dates", t:"text", l:"Travel dates / duration", hint:"If flights are booked, write exact arrival/departure dates. If not, write preferred month and number of days (e.g. Nov 2026, 10 days)."},
+    {k:"accom", t:"pills", l:"Accommodation status", opts:["I need a full package (hotels + tours + transfers)","I have hotels (tours & transfers only)","Other"]},
+    {k:"level", t:"select", l:"Accommodation level", opts:["5 Stars","4 Stars","3 Stars"]},
+    {k:"travelers", t:"text", l:"Number of travelers", hint:"Please specify adults (12+) and children (6–11.99)."},
+    {k:"requests", t:"textarea", l:"Any specific requests?", ph:"Anything you want to visit or avoid?"},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_ALL},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]},
+  { id:"flight", icon:"✈️", name:"Flight Booking", desc:"Domestic & international", fields:[
+    {k:"tripType", t:"pills", l:"Trip type", req:1, opts:["One way","Round trip"]},
+    {k:"from", t:"text", l:"From (airport / city)", req:1, half:1},
+    {k:"to", t:"text", l:"To (airport / city)", half:1},
+    {k:"depart", t:"date", l:"Departure date", req:1, half:1},
+    {k:"return", t:"date", l:"Return date", half:1, hint:"Leave blank for one-way trips."},
+    {k:"cabin", t:"select", l:"Cabin class", opts:["Economy","Business"]},
+    {k:"pax", t:"text", l:"Passengers", hint:"Please specify adults (12+), children (2–11) and infants (under 2)."},
+    {k:"airline", t:"text", l:"Preferred airline"},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_NOCASH},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]},
+  { id:"hotel", icon:"🏨", name:"Hotel Booking", desc:"In Egypt & worldwide", fields:[
+    {k:"city", t:"text", l:"Country / city", req:1},
+    {k:"checkin", t:"date", l:"Check-in date", half:1},
+    {k:"checkout", t:"date", l:"Check-out date", half:1},
+    {k:"rooms", t:"number", l:"Number of rooms", half:1, min:1, max:99},
+    {k:"category", t:"select", l:"Hotel category", opts:["5 Stars","4 Stars","3 Stars"], half:1},
+    {k:"guests", t:"text", l:"Guests", hint:"Please specify adults (12+) and children (6–11.99)."},
+    {k:"meal", t:"select", l:"Meal plan", opts:["Breakfast","Half board","All inclusive"]},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_NOCASH},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]},
+  { id:"car", icon:"🔑", name:"Long-term Car Hire", desc:"Minimum 12-month contract", fields:[
+    {k:"duration", t:"select", l:"Rental duration", req:1, opts:["1 year","2 years","3 years"]},
+    {k:"start", t:"date", l:"Start date"},
+    {k:"vehicle", t:"text", l:"Preferred vehicle", ph:"e.g. Toyota Corolla or similar"},
+    {k:"pay", t:"pills", l:"Preferred payment method", req:1, opts:PAY_NOCASH},
+    {k:"comment", t:"textarea", l:"Any comment"}
+  ]}
+];
+const svcById = id => SERVICES.find(s => s.id === id);
+
+/* ============================================================
+   Helpers
+   ============================================================ */
+function val(id){ const el = document.getElementById(id); return el ? el.value.trim() : ""; }
+function setVal(id, v){ const el = document.getElementById(id); if (el && v != null) el.value = v; }
+function markError(fieldEl, on){ fieldEl.classList.toggle("error", !!on); }
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 2800);
+}
+
+/* Normalizes a number typed by the customer.
+   "000" → "0", "07" → "7", " 3 " → "3".
+   Returns null when the value is NOT a valid whole number
+   (e.g. "abc", "1.5", "1e3", "-2") so it can be blocked.  */
+function cleanNumber(v){
+  if (v == null) return "";
+  const s = String(v).trim();
+  if (s === "") return "";
+  if (!/^\d+$/.test(s)) return null;
+  return String(parseInt(s, 10));
+}
+
+/* ============================================================
+   Service picker — tap a card, its form opens instantly below
+   ============================================================ */
+function renderServiceGrid(){
+  const grid = document.getElementById("svcGrid");
+  grid.innerHTML = SERVICES.map(s => `
+    <label class="svc-card">
+      <input type="checkbox" value="${s.id}" onchange="onServiceToggle(this)">
+      <div class="box">
+        <div class="ic">${s.icon}</div>
+        <div>
+          <div class="nm">${s.name}</div>
+          <div class="ds">${s.desc}</div>
+        </div>
+        <div class="tick"></div>
+      </div>
+    </label>`).join("");
+}
+function selectedServices(){
+  return [...document.querySelectorAll("#svcGrid input:checked")].map(i => i.value);
+}
+function setSelectedServices(ids){
+  document.querySelectorAll("#svcGrid input").forEach(i => i.checked = ids.includes(i.value));
+}
+
+function onServiceToggle(input){
+  document.getElementById("svcError").style.display = "none";
+  const id = input.value;
+  if (input.checked){
+    addServiceSection(id);
+    const sec = document.querySelector(`#svcForms .svc-section[data-svc="${id}"]`);
+    if (sec) sec.scrollIntoView({block:"nearest"});
+  } else {
+    const sec = document.querySelector(`#svcForms .svc-section[data-svc="${id}"]`);
+    if (sec) sec.remove();
+  }
+}
+
+function fieldHTML(svcId, f){
+  const id = `f_${svcId}_${f.k}`;
+  const label = `<label for="${id}">${f.l} ${f.req ? '<span class="req">*</span>' : ''}</label>`;
+  const hint = f.hint ? `<div class="hint">${f.hint}</div>` : "";
+  // number fields also get an error message so invalid values can be flagged
+  const err = (f.req || f.t === "number") ? `<div class="err-msg">This field is required.</div>` : "";
+  const showIf = f.showIf ? ` data-showif-k="f_${svcId}_${f.showIf.k}" data-showif-v="${f.showIf.v}"` : "";
+  let control = "";
+  if (f.t === "select"){
+    control = `<select id="${id}"><option value="">— Select —</option>${f.opts.map(o=>`<option>${o}</option>`).join("")}</select>`;
+  } else if (f.t === "pills"){
+    control = `<div class="pills" id="${id}" role="radiogroup" aria-label="${f.l}">` +
+      f.opts.map(o=>`<label class="pill"><input type="radio" name="${id}" value="${o}"${f.def === o ? " checked" : ""}><span>${o}</span></label>`).join("") + `</div>`;
+  } else if (f.t === "textarea"){
+    control = `<textarea id="${id}" placeholder="${f.ph||''}"></textarea>`;
+  } else {
+    const min = f.min != null ? ` min="${f.min}"` : "";
+    const max = f.max != null ? ` max="${f.max}"` : "";
+    const step = f.t === "number" ? ` step="1" inputmode="numeric"` : "";
+    control = `<input type="${f.t}" id="${id}"${min}${max}${step} placeholder="${f.ph||''}">`;
+  }
+  return `<div class="field" data-fid="${id}" data-req="${f.req?1:0}"${showIf}>${label}${control}${hint}${err}</div>`;
+}
+
+function sectionHTML(id){
+  const s = svcById(id);
+  let body = "", i = 0;
+  while (i < s.fields.length){
+    const f = s.fields[i];
+    if (f.half && s.fields[i+1] && s.fields[i+1].half){
+      body += `<div class="grid2">${fieldHTML(id, f)}${fieldHTML(id, s.fields[i+1])}</div>`;
+      i += 2;
+    } else { body += fieldHTML(id, f); i++; }
+  }
+  const note = s.note ? `<span class="note">${s.note}</span>` : "";
+  return `<div class="svc-section" data-svc="${id}">
+    <div class="head"><span class="ic">${s.icon}</span><h3>${s.name}</h3>${note}</div>
+    <div class="body">${body}</div>
+  </div>`;
+}
+
+function addServiceSection(id, data){
+  if (!svcById(id)) return; // ignore ids from older saved bookings
+  if (document.querySelector(`#svcForms .svc-section[data-svc="${id}"]`)) return;
+  // keep sections in the same order as the cards
+  const wrap = document.getElementById("svcForms");
+  const order = SERVICES.map(s => s.id);
+  const tmp = document.createElement("div");
+  tmp.innerHTML = sectionHTML(id);
+  const newSec = tmp.firstElementChild;
+  const existing = [...wrap.children];
+  const after = existing.find(el => order.indexOf(el.dataset.svc) > order.indexOf(id));
+  wrap.insertBefore(newSec, after || null);
+  if (data) applyServiceData(id, data);
+  wireConditionalFields(newSec);
+  wireNumberFields(newSec);
+}
+
+function wireConditionalFields(scope){
+  (scope || document).querySelectorAll(".field[data-showif-k]").forEach(dep => {
+    const groupId = dep.dataset.showifK, want = dep.dataset.showifV;
+    const update = () => {
+      const sel = document.querySelector(`input[name="${groupId}"]:checked`);
+      dep.classList.toggle("hidden", !(sel && sel.value === want));
+    };
+    document.querySelectorAll(`input[name="${groupId}"]`).forEach(r => r.addEventListener("change", update));
+    update();
+  });
+}
+
+/* Auto-tidies number fields the moment the customer leaves them,
+   so a typed "000" turns into "0" right in front of them. */
+function wireNumberFields(scope){
+  (scope || document).querySelectorAll('input[type="number"]').forEach(inp => {
+    inp.addEventListener("change", () => {
+      const c = cleanNumber(inp.value);
+      if (c !== null && c !== "") inp.value = c;
+      // re-validate this field live so a fixed value clears its red state
+      const fEl = inp.closest(".field");
+      if (fEl && fEl.classList.contains("error")) validateNumberField(fEl);
+    });
+  });
+}
+
+function getFieldValue(svcId, f){
+  const id = `f_${svcId}_${f.k}`;
+  if (f.t === "pills"){
+    const sel = document.querySelector(`input[name="${id}"]:checked`);
+    return sel ? sel.value : "";
+  }
+  let v = val(id);
+  if (f.t === "number" && v !== ""){
+    const c = cleanNumber(v);
+    if (c !== null) v = c; // "000" is stored as "0"
+  }
+  return v;
+}
+function setFieldValue(svcId, f, v){
+  if (v == null || v === "") return;
+  const id = `f_${svcId}_${f.k}`;
+  if (f.t === "pills"){
+    const r = document.querySelector(`input[name="${id}"][value="${CSS.escape(v)}"]`);
+    if (r){ r.checked = true; r.dispatchEvent(new Event("change")); }
+  } else setVal(id, v);
+}
+
+function collectServiceData(){
+  const out = {};
+  document.querySelectorAll("#svcForms .svc-section").forEach(sec => {
+    const id = sec.dataset.svc, s = svcById(id);
+    out[id] = {};
+    s.fields.forEach(f => out[id][f.k] = getFieldValue(id, f));
+  });
+  return out;
+}
+function applyServiceData(id, data){
+  const s = svcById(id); if (!s) return;
+  s.fields.forEach(f => setFieldValue(id, f, data[f.k]));
+}
+
+/* ============================================================
+   Validation
+   ============================================================ */
+function validateDetails(){
+  let ok = true;
+  const f = id => document.querySelector(`#detailsCard .field[data-field="${id}"]`);
+  const name = val("fullName");
+  markError(f("fullName"), !name); if (!name) ok = false;
+  const wa = val("whatsapp").replace(/[\s-]/g,"");
+  const waOk = /^\+\d{8,15}$/.test(wa);
+  markError(f("whatsapp"), !waOk); if (!waOk) ok = false;
+  const em = val("email");
+  const emOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
+  markError(f("email"), !emOk); if (!emOk) ok = false;
+  return ok;
+}
+
+/* Checks one service field. Returns true when it is fine. */
+function validateServiceField(fEl){
+  const sec = fEl.closest(".svc-section").dataset.svc;
+  const key = fEl.dataset.fid.replace(`f_${sec}_`, "");
+  const f = svcById(sec).fields.find(x => x.k === key);
+  if (!f) return true;
+  const raw = f.t === "pills"
+    ? (document.querySelector(`input[name="${fEl.dataset.fid}"]:checked`) || {}).value || ""
+    : val(fEl.dataset.fid);
+  let bad = false, msg = "This field is required.";
+  if (f.req && (raw == null || String(raw).trim() === "")){
+    bad = true;
+  } else if (f.t === "number" && String(raw).trim() !== ""){
+    const n = cleanNumber(raw);
+    if (n === null){
+      bad = true; msg = "Please enter a whole number (digits only).";
+    } else if (f.min != null && parseInt(n, 10) < f.min){
+      bad = true; msg = f.min === 1 ? "Please enter at least 1." : `Please enter ${f.min} or more.`;
+    } else if (f.max != null && parseInt(n, 10) > f.max){
+      bad = true; msg = `Please enter ${f.max} or less.`;
+    }
+  }
+  if (!bad && sec === "transport" && key === "returnDate" && String(raw).trim() !== ""){
+    const outDate = val("f_transport_date");
+    if (outDate && String(raw) < outDate){ bad = true; msg = "The return date can't be before the departure date."; }
+  }
+  const em = fEl.querySelector(".err-msg");
+  if (em && bad) em.textContent = msg;
+  markError(fEl, bad);
+  return !bad;
+}
+function validateNumberField(fEl){ return validateServiceField(fEl); }
+
+function validateAll(){
+  let ok = validateDetails();
+  let firstBad = ok ? null : document.getElementById("detailsCard");
+
+  if (selectedServices().length === 0){
+    document.getElementById("svcError").style.display = "block";
+    ok = false;
+    if (!firstBad) firstBad = document.getElementById("servicesCard");
+  }
+
+  document.querySelectorAll("#svcForms .field").forEach(fEl => {
+    if (fEl.classList.contains("hidden")) return;
+    const good = validateServiceField(fEl);
+    if (!good){ ok = false; if (!firstBad) firstBad = fEl; }
+  });
+
+  if (!ok && firstBad) firstBad.scrollIntoView({block:"center"});
+  document.getElementById("sendErr").style.display = ok ? "none" : "block";
+  return ok;
+}
+
+/* ============================================================
+   Storage: uses Claude artifact storage when previewing here,
+   falls back to localStorage when hosted on your own site.
+   ============================================================ */
+const store = {
+  async get(key){
+    try{
+      if (window.storage){
+        const r = await window.storage.get(key);
+        return r ? JSON.parse(r.value) : null;
+      }
+    }catch(e){ /* key not found or unavailable */ }
+    try{ return JSON.parse(localStorage.getItem(key)); }catch(e){ return null; }
+  },
+  async set(key, val){
+    const s = JSON.stringify(val);
+    try{ if (window.storage){ await window.storage.set(key, s); } }catch(e){}
+    try{ localStorage.setItem(key, s); }catch(e){}
+  }
+};
+const K_PROFILE = "wke:profile";
+const K_LAST = "wke:lastBooking";
+const K_OUTBOX = "wke:outbox";
+const K_ORDERS = "wke:lastOrders";
+
+function getProfile(){
+  return { fullName: val("fullName"), nationality: val("nationality"),
+           whatsapp: val("whatsapp"), email: val("email") };
+}
+
+/* ============================================================
+   Google Form helpers (PRIMARY destination — unchanged in spirit
+   from before: same entry IDs, same date/time/choice handling,
+   same batching-by-section logic).
+   ============================================================ */
+function pad2(n){ return String(n).padStart(2, "0"); }
+
+function appendEntry(fd, entry, value){
+  if (!entry || entry.indexOf("entry.") !== 0 || entry === "entry.0") return;
+  if (value == null || value === "") return;
+  fd.append(entry, value);
+}
+
+function dateTo(fd, entry, v){
+  if (!v) return;
+  const p = v.split("-"); // yyyy-mm-dd
+  appendEntry(fd, entry + "_year", p[0]);
+  appendEntry(fd, entry + "_month", String(parseInt(p[1], 10)));
+  appendEntry(fd, entry + "_day", String(parseInt(p[2], 10)));
+}
+function timeTo(fd, entry, v){
+  if (!v) return;
+  const t = v.split(":");
+  appendEntry(fd, entry + "_hour", String(parseInt(t[0], 10)));
+  appendEntry(fd, entry + "_minute", String(parseInt(t[1], 10)));
+}
+function choiceTo(fd, entry, v){
+  if (!v) return;
+  v = VALUE_MAP[v] || v;
+  if (v === "Other"){
+    appendEntry(fd, entry, "__other_option__");
+    appendEntry(fd, entry + ".other_option_response", "Other");
+  } else appendEntry(fd, entry, v);
+}
+
+// the combined Transportation + Meet cards fill BOTH form sections at once,
+// so each lands in the Orders sheet as two rows under one Order ID
+function appendTransMeet(fd, id, d){
+  const arrival = id === "transMeetGreet";
+  const M = ENTRY.meetGreet, T = ENTRY.transport;
+  appendEntry(fd, ENTRY.meetType, arrival ? "Meet & Greet" : "Meet & Assist");
+  // transportation section
+  appendEntry(fd, T.pickup,  arrival ? AIRPORT_NAME : d.pickup);
+  appendEntry(fd, T.dropoff, arrival ? d.dropoff : AIRPORT_NAME);
+  dateTo(fd, T.date, d.date);
+  timeTo(fd, T.time, d.time);
+  appendEntry(fd, T.pax, d.pax);
+  appendEntry(fd, T.luggage, d.luggage);
+  appendEntry(fd, T.flight, d.flight);
+  choiceTo(fd, T.vehicle, d.vehicle);
+  choiceTo(fd, T.pay, d.pay);
+  appendEntry(fd, T.comment, d.comment);
+  // meet section
+  dateTo(fd, M.date, d.date);
+  timeTo(fd, M.time, d.time);
+  appendEntry(fd, M.flight, d.flight);
+  appendEntry(fd, M.pax, d.pax);
+  appendEntry(fd, M.luggage, d.luggage);
+  choiceTo(fd, M.pay, d.pay);
+  appendEntry(fd, M.comment, d.comment);
+}
+
+function buildFormData(p, services, data){
+  const fd = new URLSearchParams();
+
+  // the form sections this batch "visits", in order
+  const secs = [];
+  services.forEach(id => (SECTIONS_OF[id] || []).forEach(s => { if (!secs.includes(s)) secs.push(s); }));
+
+  // Section 1 — common details
+  appendEntry(fd, ENTRY.fullName, p.fullName);
+  appendEntry(fd, ENTRY.nationality, p.nationality);
+  appendEntry(fd, ENTRY.whatsapp, p.whatsapp);
+  appendEntry(fd, ENTRY.email, p.email);
+  appendEntry(fd, ENTRY.howHelp, SEC_HOWHELP[secs[0]] || "");
+
+  services.forEach(id => {
+    const svcData = data[id] || {};
+    if (id === "transMeetGreet" || id === "transMeetAssist"){ appendTransMeet(fd, id, svcData); return; }
+    const map = ENTRY[id] || {};
+    if (MEET_TYPE_VALUE[id]) appendEntry(fd, ENTRY.meetType, MEET_TYPE_VALUE[id]);
+    svcById(id).fields.forEach(f => {
+      const entry = map[f.k];
+      let v = svcData[f.k];
+      if (!entry || v == null || v === "") return;
+      // numbers are re-normalized right before sending, so a value like
+      // "000" can never reach Google in a rejectable form
+      if (f.t === "number"){
+        const c = cleanNumber(v);
+        if (c === null || c === "") return; // never send an invalid number
+        v = c;
+      }
+      if ((DATE_FIELDS[id] || []).includes(f.k)) return dateTo(fd, entry, v);
+      if ((TIME_FIELDS[id] || []).includes(f.k)) return timeTo(fd, entry, v);
+      // Day Tour start time is a dropdown of 10-minute steps → round to nearest step
+      if ((CHOICE_TIME_FIELDS[id] || []).includes(f.k)){
+        let h = parseInt(v.split(":")[0], 10), mi = parseInt(v.split(":")[1], 10);
+        mi = Math.round(mi / 10) * 10;
+        if (mi === 60){ mi = 0; h = (h + 1) % 24; }
+        return appendEntry(fd, entry, pad2(h) + ":" + pad2(mi));
+      }
+      choiceTo(fd, entry, v);
+    });
+  });
+
+  // answer the "book another service?" navigation questions like a real user path
+  for (let i = 0; i < secs.length; i++){
+    const nav = SEC_NAV[secs[i]];
+    if (!nav) continue;
+    if (secs[i + 1]){
+      appendEntry(fd, nav.another, "Yes");
+      appendEntry(fd, nav.which, SEC_HOWHELP[secs[i + 1]]);
+    } else {
+      appendEntry(fd, nav.another, "No");
+    }
+  }
+
+  // pageHistory must match the sections actually "visited" — Google validates
+  // required questions ONLY in visited sections
+  fd.append("fvv", "1");
+  fd.append("pageHistory", [0].concat(secs).join(","));
+  return fd;
+}
+
+/* Delivery to the Google Form. Because the browser must use
+   mode:"no-cors" for the direct fallback path, the page can never
+   read that reply — fetch() succeeding only proves the request
+   REACHED Google, not that it was accepted. The Apps Script path
+   (tried first) gives a real answer instead. */
+async function postToGoogleForm(params){
+  if (APPS_SCRIPT_URL.indexOf("https://") === 0){
+    let lastErr = null;
+    for (let attempt = 1; attempt <= 3; attempt++){
+      try{
+        const res = await fetch(APPS_SCRIPT_URL, { method: "POST", body: params.toString() });
+        if (!res.ok) throw new Error("script_http_" + res.status);
+        const out = await res.json();
+        if (out && out.ok === true) return;   // ✓ Google CONFIRMED the row was written
+        const e = new Error(out && out.reason ? out.reason : "google_rejected");
+        e.rejected = true;
+        throw e;
+      }catch(err){
+        if (err && err.rejected) throw err;   // real rejection → surface immediately
+        lastErr = err;                        // clerk unreachable → retry
+        await new Promise(r => setTimeout(r, 1500 * attempt));
+      }
+    }
+  }
+
+  // fallback: direct to Google Forms (no-cors, "reached" only)
+  let lastErr = null;
+  for (let attempt = 1; attempt <= 3; attempt++){
+    try{
+      await fetch(GOOGLE_FORM_ACTION, {
+        method: "POST",
+        mode: "no-cors",
+        keepalive: true,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString()
+      });
+      return;
+    }catch(err){
+      lastErr = err;
+      await new Promise(r => setTimeout(r, 1500 * attempt));
+    }
+  }
+  throw lastErr || new Error("Network error");
+}
+
+/* ============================================================
+   Turning the on-page form data into submit_order arguments
+   ------------------------------------------------------------
+   Each card's raw field values go through FIELD_MAP to become a
+   plain object keyed by database column name — exactly what the
+   submit_order() function on Supabase expects as one of its
+   p_transport / p_day_tour / ... arguments. Empty values are left
+   out entirely (the database already treats a missing key as "no
+   value"), and numeric fields go through cleanNumber() the same
+   way the on-screen validation already does.
+   ============================================================ */
+function mapPayload(mapKey, data){
+  const out = {};
+  (FIELD_MAP[mapKey] || []).forEach(([from, to, numeric]) => {
+    let v = data[from];
+    if (v == null || v === "") return;
+    if (numeric){
+      const c = cleanNumber(v);
+      if (c === null || c === "") return;
+      v = Number(c);
+    }
+    out[to] = v;
+  });
+  return out;
+}
+
+function buildDayTourPayload(d){
+  const p = mapPayload("daytour", d);
+  if (d.guide === "Yes") p.guide_required = true;
+  else if (d.guide === "No") { p.guide_required = false; delete p.guide_language; }
+  return p;
+}
+
+// returns the submit_order argument(s) one selected card contributes
+function buildServicePayloads(id, data){
+  const d = data[id] || {};
+  switch (id){
+    case "transport": {
+      const t = mapPayload("transport", d);
+      if (d.tripType === "Round trip" && d.returnDate){
+        t.trip_type = "round_trip";
+        t.return_date = d.returnDate;
+        if (d.returnTime) t.return_time = d.returnTime;
+        if (d.returnFlight) t.return_flight_number = d.returnFlight;
+      }
+      return { p_transport: t };
+    }
+    case "daytour":
+      return { p_day_tour: buildDayTourPayload(d) };
+    case "transMeetGreet": {
+      const t = mapPayload("transport", { ...d, pickup: AIRPORT_NAME });
+      const m = mapPayload("meet", d);
+      m.meet_type = "Meet & Greet";
+      return { p_transport: t, p_meet_service: m };
+    }
+    case "transMeetAssist": {
+      const t = mapPayload("transport", { ...d, dropoff: AIRPORT_NAME });
+      const m = mapPayload("meet", d);
+      m.meet_type = "Meet & Assist";
+      return { p_transport: t, p_meet_service: m };
+    }
+    case "meetGreet": {
+      const m = mapPayload("meet", d); m.meet_type = "Meet & Greet";
+      return { p_meet_service: m };
+    }
+    case "meetAssist": {
+      const m = mapPayload("meet", d); m.meet_type = "Meet & Assist";
+      return { p_meet_service: m };
+    }
+    case "package":
+      return { p_tour_package: mapPayload("package", d) };
+    case "flight":
+      return { p_flight_booking: mapPayload("flight", d) };
+    case "hotel":
+      return { p_hotel_booking: mapPayload("hotel", d) };
+    case "car":
+      return { p_car_rental: mapPayload("car", d) };
+    default:
+      return {};
+  }
+}
+
+/* ============================================================
+   Delivery
+   ------------------------------------------------------------
+   A normal, readable request to Supabase's REST API — unlike the
+   old Google Form submission, this is NOT a no-cors request, so
+   the page gets a real answer: either the new order's id back
+   (success), or an actual error message (failure). Nothing here
+   is ever left uncertain.
+
+   Two or more selected cards can share a database table (picking
+   "Transportation" and the combined "Transportation + Meet &
+   Greet" card at once, for instance) — the same SECTIONS_OF
+   batching used for the Google Form above keeps each submit_order
+   call free of conflicts, so nothing gets silently overwritten.
+   ============================================================ */
+async function callRpc(fn, params){
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": SUPABASE_ANON_KEY,
+      "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+    },
+    body: JSON.stringify(params),
+  });
+  if (!res.ok){
+    let detail = "";
+    try{
+      const j = await res.json();
+      detail = j.message || j.hint || j.error_description || "";
+    }catch(e){ /* response wasn't JSON */ }
+    throw new Error(detail || `Request failed (${res.status})`);
+  }
+  return res.json();
+}
+// submit_order_v2 returns {order_id, order_number, round_trip}
+function callSubmitOrder(params){ return callRpc("submit_order_v2", params); }
+
+function fmtDay(iso){
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ""));
+  if (!m) return String(iso || "");
+  const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  return d.toLocaleDateString("en-GB", {day:"numeric", month:"short", year:"numeric"});
+}
+
+/* The Google Form has no round-trip questions yet, so for the Sheet
+   the return details travel inside the client comment of the
+   Transportation row. Nothing is lost; the team reads it there. */
+function prepareSheetData(data){
+  const copy = JSON.parse(JSON.stringify(data));
+  const t = copy.transport;
+  if (t && t.tripType === "Round trip" && t.returnDate){
+    let head = "ROUND TRIP — Return: " + fmtDay(t.returnDate) + (t.returnTime ? " " + t.returnTime : "");
+    if (t.returnFlight) head += " (return flight " + t.returnFlight + ")";
+    t.comment = t.comment ? head + " | " + t.comment : head;
+  }
+  return copy;
+}
+
+/* Local backup of every order (kept on the customer's device).
+   Even if a send ever fails, the order data is never lost. */
+async function outboxAdd(order){
+  try{
+    const list = (await store.get(K_OUTBOX)) || [];
+    list.push(order);
+    while (list.length > 20) list.shift(); // keep the last 20 only
+    await store.set(K_OUTBOX, list);
+  }catch(e){}
+}
+async function outboxMarkSent(oid){
+  try{
+    const list = (await store.get(K_OUTBOX)) || [];
+    const o = list.find(x => x.oid === oid);
+    if (o) o.status = "sent";
+    await store.set(K_OUTBOX, list);
+  }catch(e){}
+}
+
+/* If sending fails completely, this builds a WhatsApp message
+   with the FULL order pre-filled, so the customer can deliver
+   it to you with one tap instead of losing it. */
+function waFallbackLink(p, services, data){
+  const lines = [
+    "Booking request (sent via website backup):",
+    "Name: " + p.fullName,
+    "WhatsApp: " + p.whatsapp,
+    "Email: " + p.email
+  ];
+  if (p.nationality) lines.push("Nationality: " + p.nationality);
+  services.forEach(id => {
+    const s = svcById(id); if (!s) return;
+    lines.push("", "— " + s.name + " —");
+    s.fields.forEach(f => {
+      const v = (data[id] || {})[f.k];
+      if (v) lines.push(f.l + ": " + v);
+    });
+  });
+  return "https://wa.me/" + BUSINESS_WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n"));
+}
+
+async function sendBooking(){
+  const errBox = document.getElementById("sendErr");
+  errBox.textContent = "Please complete the highlighted fields above first.";
+  if (!validateAll()) return;
+
+  const p = getProfile();
+  const services = selectedServices();
+  const data = collectServiceData();
+
+  const btn = document.getElementById("btnSend");
+  btn.disabled = true;
+  btn.textContent = "Sending…";
+  const sheetData = prepareSheetData(data);
+
+  // back up the order locally BEFORE sending — nothing can be lost
+  const oid = Date.now().toString(36);
+  await outboxAdd({ oid, p, services, data, at: new Date().toISOString(), status: "pending" });
+
+  // group the selected cards so no batch tries to fill the same
+  // section/table twice — shared by both destinations below
+  const batches = [];
+  services.forEach(id => {
+    const secs = SECTIONS_OF[id] || [];
+    let b = batches.find(x => !x.secs.some(s => secs.includes(s)));
+    if (!b){ b = { ids: [], secs: [] }; batches.push(b); }
+    b.ids.push(id);
+    b.secs = b.secs.concat(secs);
+  });
+
+  try{
+    // PRIMARY: the Google Sheet — this is what decides success/failure
+    // for the customer, exactly as before.
+    for (let i = 0; i < batches.length; i++){
+      if (i > 0){
+        btn.textContent = `Sending… (${i + 1} of ${batches.length})`;
+        await new Promise(r => setTimeout(r, 8000)); // gap so sheet writes never overlap
+      }
+      await postToGoogleForm(buildFormData(p, batches[i].ids, sheetData));
+    }
+
+    await outboxMarkSent(oid);
+
+    if (document.getElementById("rememberMe").checked){
+      await store.set(K_PROFILE, p);
+      await store.set(K_LAST, { services, data, savedAt: new Date().toISOString() });
+    }
+  }catch(err){
+    // the Sheet submission genuinely failed — tell the customer the truth + a rescue path
+    btn.disabled = false;
+    btn.textContent = "Send booking request →";
+    const waLink = '<a href="' + waFallbackLink(p, services, data) + '" target="_blank" rel="noopener">' +
+      "send it to us on WhatsApp instead</a> — your full request is already written for you.";
+    errBox.innerHTML = (err && err.rejected)
+      ? "Your request was <u>not</u> recorded by our booking system. " +
+        "Please review your answers and tap Send again, or " + waLink
+      : "Your request was <u>not</u> sent — the connection to our server failed. " +
+        "Please check your internet and tap Send again, or " + waLink;
+    errBox.style.display = "block";
+    return;
+  }
+
+  // SIDE COPY: mirror the same booking into the new Supabase system,
+  // best-effort. Never blocks and never shown to the customer — the
+  // Sheet above is still the single source of truth for now.
+  const orderNumbers = [];
+  for (const b of batches){
+    try{
+      const params = {
+        p_client_name: p.fullName, p_client_phone: p.whatsapp,
+        p_client_email: p.email || null, p_client_nationality: p.nationality || null,
+        p_transport: null, p_day_tour: null, p_meet_service: null, p_flight_booking: null,
+        p_hotel_booking: null, p_car_rental: null, p_tour_package: null,
+      };
+      b.ids.forEach(id => Object.assign(params, buildServicePayloads(id, data)));
+      const r = await callSubmitOrder(params);
+      if (r && r.order_number != null) orderNumbers.push(r.order_number);
+    }catch(err){
+      console.warn("Supabase mirror failed (the Sheet submission above was not affected):", err);
+    }
+  }
+
+  // show the order number only when the database really gave us one
+  const numBox = document.getElementById("orderNumBox");
+  if (orderNumbers.length){
+    numBox.innerHTML =
+      '<div class="on-label">Your order number' + (orderNumbers.length > 1 ? "s" : "") + '</div>' +
+      '<div class="on-num">' + orderNumbers.map(n => "#" + esc(n)).join(", ") + '</div>' +
+      '<p>Keep it. With your name and WhatsApp number you can view, change or cancel your booking from this page (changes close shortly before the service).</p>' +
+      '<button class="btn btn-ghost btn-sm" type="button" onclick="openEdit()">View or change my booking</button>';
+    numBox.classList.remove("hidden");
+    if (document.getElementById("rememberMe").checked) await store.set(K_ORDERS, orderNumbers);
+  }
+
+  document.getElementById("bookingArea").classList.add("hidden");
+  document.getElementById("ticket").classList.add("hidden");
+  document.getElementById("welcome").classList.add("hidden");
+  document.getElementById("stepDone").classList.remove("hidden");
+  window.scrollTo({top:0});
+}
+
+/* ============================================================
+   Returning customer: prefill + one-tap repeat ticket
+   ============================================================ */
+async function initReturning(){
+  const p = await store.get(K_PROFILE);
+  if (p && p.fullName){
+    setVal("fullName", p.fullName); setVal("nationality", p.nationality);
+    setVal("whatsapp", p.whatsapp); setVal("email", p.email);
+    document.getElementById("welcomeName").textContent = p.fullName.split(" ")[0];
+    document.getElementById("welcome").classList.remove("hidden");
+  }
+  const last = await store.get(K_LAST);
+  if (last && last.services && last.services.length){
+    document.getElementById("ticketTags").innerHTML = last.services.map(id => {
+      const s = svcById(id); return s ? `<span class="svc-tag">${s.icon} ${s.name}</span>` : "";
+    }).join("");
+    const d = last.savedAt ? new Date(last.savedAt) : null;
+    document.getElementById("ticketMeta").textContent =
+      d ? `Last requested on ${d.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})}` : "";
+    document.getElementById("ticket").classList.remove("hidden");
+
+    document.getElementById("btnRepeat").onclick = () => {
+      setSelectedServices(last.services);
+      document.getElementById("svcForms").innerHTML = "";
+      last.services.forEach(id => addServiceSection(id, last.data[id]));
+      document.getElementById("servicesCard").scrollIntoView();
+      toast("Your last booking is loaded — just update the dates ✨");
+    };
+    document.getElementById("btnFresh").onclick = () => {
+      document.getElementById("ticket").classList.add("hidden");
+    };
+  }
+}
+
+/* ============================================================
+   Edit your booking (customer self-service)
+   ------------------------------------------------------------
+   Everything goes through three database functions that check
+   phone + name + order number together on the server:
+   client_lookup_order, client_update_order, client_request_cancel.
+   The page never reads or writes any table directly, and it never
+   sees prices, drivers or internal notes.
+   ============================================================ */
+function esc(s){
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+const WA_CONTACT = "https://wa.me/" + BUSINESS_WHATSAPP;
+
+const EDIT_UI = {
+  order_transport:      { label:"Transportation", icon:"🚗", fields:[["pickup","Pickup location"],["dropoff","Drop-off location"],["service_date","Date"],["service_time","Time"],["flight_number","Flight number"],["adults","Passengers"],["luggage","Luggage"],["vehicle","Vehicle"],["stops","Extra stops (one per line)"],["comment","Comment"]] },
+  order_day_tour:       { label:"Day Tour", icon:"🐪", fields:[["service_date","Tour date"],["service_time","Start time"],["pickup","Pickup location"],["destination","Tour destination"],["adults","Adults"],["children","Children"],["guide_required","Tour guide"],["guide_language","Guide language"],["stops","Extra stops (one per line)"],["comment","Comment"]] },
+  order_meet_service:   { label:"Meet & Greet", icon:"🛬", fields:[["service_date","Date"],["service_time","Time"],["flight_number","Flight number"],["pax","Travelers"],["luggage","Luggage"],["comment","Comment"]] },
+  order_flight_booking: { label:"Flight Booking", icon:"✈️", fields:[["trip_type","Trip type"],["from_location","From"],["to_location","To"],["service_date","Departure date"],["return_date","Return date"],["cabin_class","Cabin"],["pax","Passengers"],["airline","Airline"],["comment","Comment"]] },
+  order_hotel_booking:  { label:"Hotel Booking", icon:"🏨", fields:[["city","Country / city"],["service_date","Check-in"],["check_out","Check-out"],["rooms","Rooms"],["category","Category"],["guests","Guests"],["meal_plan","Meal plan"],["comment","Comment"]] },
+  order_car_rental:     { label:"Long-term Car Hire", icon:"🔑", fields:[["duration","Duration"],["service_date","Start date"],["vehicle","Vehicle"],["comment","Comment"]] },
+  order_tour_package:   { label:"Tour Package", icon:"🗺️", fields:[["destinations","Destinations"],["flight_status","Flight status"],["service_date","Date"],["travel_dates","Travel dates"],["accommodation_status","Accommodation"],["level","Level"],["travelers","Travelers"],["special_requests","Special requests"],["comment","Comment"]] }
+};
+const FIELD_KIND = { service_date:"date", check_out:"date", return_date:"date", service_time:"time",
+  adults:"number", pax:"number", luggage:"number", children:"number",
+  stops:"textarea", comment:"textarea", special_requests:"textarea" };
+const STATUS_TEXT = { Pending:"Awaiting confirmation", Approved:"Confirmed", Holding:"In queue", Refused:"Declined", Completed:"Completed" };
+
+const editCtx = { phone:"", name:"", num:0, data:null, flash:null };
+
+function errText(code, hrs){
+  switch (code){
+    case "not_found":   return "We couldn't find a booking with these details. Please check that your name and WhatsApp number are written exactly as in your booking and that the order number is right.";
+    case "try_later":   return "Too many attempts. For your security, please wait about 15 minutes and try again, or contact us on WhatsApp.";
+    case "locked":      return "This booking can no longer be changed online. Please contact us on WhatsApp.";
+    case "invalid_value": return "Some values aren't valid. Please check that dates are far enough ahead" + (hrs ? " (at least " + hrs + " hours)" : "") + ", that a return isn't before the outbound trip, and that numbers and texts are filled in correctly.";
+    default:            return "Something went wrong. Please try again, or contact us on WhatsApp.";
+  }
+}
+
+function openEdit(){
+  document.body.classList.add("edit-mode");
+  editReset(true);
+  window.scrollTo({top:0});
+}
+function closeEdit(){
+  document.body.classList.remove("edit-mode");
+  window.scrollTo({top:0});
+}
+async function editReset(prefill){
+  editCtx.data = null; editCtx.flash = null;
+  document.getElementById("edResult").classList.add("hidden");
+  document.getElementById("edResult").innerHTML = "";
+  document.getElementById("edLookup").classList.remove("hidden");
+  document.getElementById("edErr").style.display = "none";
+  if (prefill){
+    const p = await store.get(K_PROFILE);
+    if (p){ if (!val("edName")) setVal("edName", p.fullName); if (!val("edPhone")) setVal("edPhone", p.whatsapp); }
+    const nums = await store.get(K_ORDERS);
+    if (nums && nums.length && !val("edNum")) setVal("edNum", String(nums[nums.length - 1]));
+  }
+}
+function showEdErr(msg){
+  const e = document.getElementById("edErr");
+  e.innerHTML = msg + ' <a href="' + WA_CONTACT + '" target="_blank" rel="noopener">WhatsApp us</a>';
+  e.style.display = "block";
+}
+
+async function editFind(){
+  const name = val("edName"), phone = val("edPhone");
+  const numRaw = val("edNum").replace(/\D/g, "");
+  document.getElementById("edErr").style.display = "none";
+  if (!name || phone.replace(/\D/g, "").length < 8 || !numRaw || numRaw.length > 12){
+    showEdErr("Please fill in your name, WhatsApp number and order number.");
+    return;
+  }
+  const btn = document.getElementById("edBtn");
+  btn.disabled = true; btn.textContent = "Searching…";
+  try{
+    const r = await callRpc("client_lookup_order", { p_phone: phone, p_name: name, p_order_number: Number(numRaw) });
+    if (!r || r.ok !== true){ showEdErr(errText(r && r.error)); return; }
+    editCtx.phone = phone; editCtx.name = name; editCtx.num = Number(numRaw); editCtx.data = r;
+    renderEdit();
+  }catch(e){
+    showEdErr("Connection problem. Please check your internet and try again.");
+  }finally{
+    btn.disabled = false; btn.textContent = "Find my booking";
+  }
+}
+
+function fmtVal(key, v){
+  if (v == null || v === "") return "";
+  if (key === "guide_required") return v ? "Yes" : "No";
+  if (FIELD_KIND[key] === "date") return fmtDay(v);
+  if (FIELD_KIND[key] === "time") return String(v).slice(0, 5);
+  return String(v);
+}
+function lockText(s, hrs){
+  if (s.locked_reason === "status")
+    return "This booking can no longer be changed online.";
+  if (s.locked_reason === "no_date")
+    return "This booking can't be changed online.";
+  return "Online changes close " + hrs + " hours before the service.";
+}
+
+function editCardHTML(s, i, hrs){
+  const ui = EDIT_UI[s.service_table] || { label:s.service_table, icon:"📄", fields:[] };
+  let title = ui.label;
+  if (s.service_table === "order_meet_service" && s.fields.meet_type)
+    title = s.fields.meet_type === "Meet & Assist" ? "Meet & Assist — Departure" : "Meet & Greet — Arrival";
+  if (s.leg) title += s.leg === "outbound" ? " — Outbound" : " — Return";
+
+  let rows = "", inputs = "";
+  ui.fields.forEach(([key, label]) => {
+    if (!(key in s.fields)) return;
+    const raw = s.fields[key];
+    const canEdit = s.editable && s.editable_fields.indexOf(key) > -1;
+    if (canEdit){
+      const kind = FIELD_KIND[key] || "text";
+      const id = "ed_" + i + "_" + key;
+      let ctl;
+      if (kind === "textarea") ctl = '<textarea id="' + id + '">' + esc(raw == null ? "" : raw) + '</textarea>';
+      else {
+        const v = kind === "time" ? String(raw == null ? "" : raw).slice(0, 5) : (raw == null ? "" : raw);
+        const extra = kind === "number" ? ' step="1" min="0" inputmode="numeric"' : "";
+        ctl = '<input type="' + kind + '" id="' + id + '" value="' + esc(v) + '"' + extra + '>';
+      }
+      inputs += '<div class="field"><label for="' + id + '">' + esc(label) + '</label>' + ctl + '</div>';
+    } else {
+      const shown = fmtVal(key, raw);
+      if (shown) rows += '<div class="ed-row"><span class="k">' + esc(label) + '</span><span class="v">' + esc(shown) + '</span></div>';
+    }
+  });
+
+  let body = "";
+  if (s.editable){
+    body += (rows ? '<div class="ed-sub">Details</div>' + rows : "");
+    body += '<div class="ed-sub">You can change</div>' + inputs;
+    body += '<button class="btn btn-primary" type="button" onclick="editSave(' + i + ')" style="width:100%">Save changes</button>';
+    body += '<div class="ed-msg" id="edMsg_' + i + '"></div>';
+  } else {
+    body += rows;
+    body += '<div class="ed-lock">' + esc(lockText(s, hrs)) + ' To change it, please <a href="' + WA_CONTACT + '" target="_blank" rel="noopener">contact us on WhatsApp</a>.</div>';
+  }
+  return '<div class="ed-svc" data-i="' + i + '">' +
+    '<div class="head"><span class="ic">' + ui.icon + '</span><h3>' + esc(title) + '</h3>' +
+    '<span class="ed-status st-' + esc(s.status) + '">' + esc(STATUS_TEXT[s.status] || s.status) + '</span></div>' +
+    '<div class="ed-body">' + body + '</div></div>';
+}
+
+function renderEdit(){
+  const d = editCtx.data;
+  const hrs = d.lock_hours;
+  d.services.sort((a, b) => String(a.fields.service_date || "").localeCompare(String(b.fields.service_date || "")) ||
+                            (a.leg === "return" ? 1 : 0) - (b.leg === "return" ? 1 : 0));
+  const first = String(d.client_name || "").split(" ")[0];
+  let html =
+    '<div class="ed-head"><div><div class="sec-eyebrow">Order #' + esc(d.order_number) + '</div>' +
+    '<h2 class="step-title">Hello ' + esc(first) + '</h2></div>' +
+    '<button class="btn btn-ghost btn-sm" type="button" onclick="editReset(false)">Not me</button></div>' +
+    '<p class="step-sub">You can change a booking online until ' + esc(hrs) + ' hours before the service. Every change is reviewed by our team, and a confirmed booking goes back to "Awaiting confirmation" until we approve the change.</p>';
+  d.services.forEach((s, i) => { html += editCardHTML(s, i, hrs); });
+
+  const anyEditable = d.services.some(s => s.editable);
+  html += '<div class="ed-cancel">';
+  if (anyEditable){
+    html += '<button class="btn btn-danger" type="button" onclick="editCancel()">Request cancellation</button>' +
+            '<div class="ed-msg" id="edCancelMsg"></div>' +
+            '<p class="hint" style="margin-top:8px">Our team confirms cancellations with you on WhatsApp.</p>';
+  } else {
+    html += '<p class="hint">To cancel or change this booking, please <a href="' + WA_CONTACT + '" target="_blank" rel="noopener">contact us on WhatsApp</a>.</p>';
+  }
+  html += '</div>';
+
+  const box = document.getElementById("edResult");
+  box.innerHTML = html;
+  document.getElementById("edLookup").classList.add("hidden");
+  box.classList.remove("hidden");
+
+  if (editCtx.flash){
+    const idx = d.services.findIndex(s => s.service_id === editCtx.flash.id);
+    const m = idx > -1 && document.getElementById("edMsg_" + idx);
+    if (m){ m.textContent = editCtx.flash.text; m.className = "ed-msg ok"; }
+    editCtx.flash = null;
+  }
+}
+
+async function editReload(){
+  const r = await callRpc("client_lookup_order", { p_phone: editCtx.phone, p_name: editCtx.name, p_order_number: editCtx.num });
+  if (r && r.ok === true){ editCtx.data = r; renderEdit(); }
+}
+
+async function editSave(i){
+  const d = editCtx.data, s = d.services[i];
+  const msg = document.getElementById("edMsg_" + i);
+  const say = (text, ok) => { msg.textContent = text; msg.className = "ed-msg " + (ok ? "ok" : "bad"); };
+  const changes = {};
+  let problem = "";
+  const labelOf = k => { const f = (EDIT_UI[s.service_table] || {fields:[]}).fields.find(x => x[0] === k); return f ? f[1] : k; };
+
+  s.editable_fields.forEach(k => {
+    const el = document.getElementById("ed_" + i + "_" + k);
+    if (!el || problem) return;
+    const kind = FIELD_KIND[k] || "text";
+    const nv = el.value.trim();
+    let ov = s.fields[k] == null ? "" : String(s.fields[k]);
+    if (kind === "time") ov = ov.slice(0, 5);
+    if (kind === "number"){
+      if (nv === ""){ if (ov !== "") problem = labelOf(k) + ": please enter a number."; return; }
+      const c = cleanNumber(nv);
+      const min = (k === "adults" || k === "pax") ? 1 : 0;
+      if (c === null || Number(c) < min){ problem = labelOf(k) + ": please enter a whole number" + (min ? " (at least 1)." : "."); return; }
+      if (c !== ov) changes[k] = Number(c);
+      return;
+    }
+    if (nv === ov) return;
+    if (nv === "" && k !== "comment" && k !== "stops" && k !== "special_requests"){ problem = labelOf(k) + " can't be empty."; return; }
+    changes[k] = nv;
+  });
+
+  if (problem){ say(problem, false); return; }
+  if (!Object.keys(changes).length){ say("No changes to save.", false); return; }
+
+  say("Saving…", true);
+  try{
+    const r = await callRpc("client_update_order", {
+      p_phone: editCtx.phone, p_name: editCtx.name, p_order_number: editCtx.num,
+      p_service_table: s.service_table, p_service_id: s.service_id, p_changes: changes
+    });
+    if (r && r.ok === true){
+      editCtx.flash = { id: s.service_id, text: r.changed && r.changed.length ? "Saved. Our team will review and confirm your change." : "No changes to save." };
+      await editReload();
+      toast("Saved ✓");
+    } else {
+      const code = r && r.error;
+      const html = errText(code, d.lock_hours);
+      msg.innerHTML = esc(html) + (code === "locked" || code === "not_found" || code === "try_later" ? ' <a href="' + WA_CONTACT + '" target="_blank" rel="noopener">WhatsApp us</a>' : "");
+      msg.className = "ed-msg bad";
+      if (code === "locked") editReload();
+    }
+  }catch(e){
+    say("Connection problem. Please check your internet and try again.", false);
+  }
+}
+
+async function editCancel(){
+  const msg = document.getElementById("edCancelMsg");
+  if (!confirm("Send a cancellation request for this whole booking to our team?")) return;
+  msg.textContent = "Sending…"; msg.className = "ed-msg ok";
+  try{
+    const r = await callRpc("client_request_cancel", { p_phone: editCtx.phone, p_name: editCtx.name, p_order_number: editCtx.num });
+    if (r && r.ok === true){
+      msg.textContent = "Your cancellation request was sent. Our team will confirm it with you on WhatsApp.";
+      msg.className = "ed-msg ok";
+    } else {
+      msg.innerHTML = esc(errText(r && r.error)) + ' <a href="' + WA_CONTACT + '" target="_blank" rel="noopener">WhatsApp us</a>';
+      msg.className = "ed-msg bad";
+    }
+  }catch(e){
+    msg.textContent = "Connection problem. Please check your internet and try again.";
+    msg.className = "ed-msg bad";
+  }
+}
+
+renderServiceGrid();
+initReturning();
+</script>
+</body>
+</html>
